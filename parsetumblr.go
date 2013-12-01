@@ -33,33 +33,33 @@ type Entries struct {
 
 type Entry struct {
 	//Raw     string   `xml:",innerxml"`
-	XMLName           xml.Name `xml:"post"`
-	Id                string   `xml:"id,attr"`
-	Url               string   `xml:"url,attr"`
-	UrlWithSlug       string   `xml:"url-with-slug,attr"`
-	Type              string   `xml:"type,attr"`
-	UnixTimestamp     int64    `xml:"unix-timestamp,attr"`
+	//XMLName           xml.Name `xml:"post"`
+	TumblrId          string `xml:"id,attr"`
+	Url               string `xml:"url,attr"`
+	UrlWithSlug       string `xml:"url-with-slug,attr"`
+	Type              string `xml:"type,attr"`
+	UnixTimestamp     int64  `xml:"unix-timestamp,attr"`
 	published         time.Time
 	ReblogKey         string           `xml:"reblog-key,attr"`
 	Slug              string           `xml:"slug,attr"`
-	RegularTitle      string           `xml:"regular-title"`
-	RegularBody       string           `xml:"regular-body"`
-	LinkText          string           `xml:"link-text"`
-	LinkUrl           string           `xml:"link-url"`
-	QuoteText         string           `xml:"quote-text"`
-	QuoteSource       string           `xml:"quote-source"`
-	PhotoCaption      string           `xml:"photo-caption"`
-	Photos            []Photo          `xml:"photo-url"`
-	ConversationTitle string           `xml:"conversation-title"`
-	ConversationText  string           `xml:"conversation-text"`
-	ConversationLines ConversationLine `xml:"line"`
-	VideoCaption      string           `xml:"video-caption"`
-	VideoSource       string           `xml:"video-source"`
-	VideoPlayer       string           `xml:"video-player"`
-	AudioCaption      string           `xml:"audio-caption"`
-	AudioPlayer       string           `xml:"audio-player"`
-	Question          string           `xml:"question"`
-	Answer            string           `xml:"answer"`
+	RegularTitle      string           `xml:"regular-title" datastore:",noindex"`
+	RegularBody       string           `xml:"regular-body" datastore:",noindex"`
+	LinkText          string           `xml:"link-text" datastore:",noindex"`
+	LinkUrl           string           `xml:"link-url" datastore:",noindex"`
+	QuoteText         string           `xml:"quote-text" datastore:",noindex"`
+	QuoteSource       string           `xml:"quote-source" datastore:",noindex"`
+	PhotoCaption      string           `xml:"photo-caption" datastore:",noindex"`
+	Photos            []Photo          `xml:"photo-url" datastore:",noindex"`
+	ConversationTitle string           `xml:"conversation-title" datastore:",noindex"`
+	ConversationText  string           `xml:"conversation-text" datastore:",noindex"`
+	ConversationLines ConversationLine `xml:"line" datastore:",noindex"`
+	VideoCaption      string           `xml:"video-caption" datastore:",noindex"`
+	VideoSource       string           `xml:"video-source" datastore:",noindex"`
+	VideoPlayer       string           `xml:"video-player" datastore:",noindex"`
+	AudioCaption      string           `xml:"audio-caption" datastore:",noindex"`
+	AudioPlayer       string           `xml:"audio-player" datastore:",noindex"`
+	Question          string           `xml:"question" datastore:",noindex"`
+	Answer            string           `xml:"answer" datastore:",noindex"`
 }
 
 type Photo struct {
