@@ -116,3 +116,16 @@ func (e Entry) Published() time.Time {
 
 	return e.published
 }
+
+func (e Entry) PhotoUrl(size int64) string {
+	if e.Type != "photo" {
+		return ""
+	}
+
+	for _, photo := range e.Photos {
+		if photo.Size == size {
+			return photo.Url
+		}
+	}
+	return ""
+}
